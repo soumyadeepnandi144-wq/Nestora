@@ -1,7 +1,6 @@
+
 <% layout("/layouts/boilerplate") %>
-
 <h3>All Listing</h3>
-
 <div class="row">
     <% for(let listings of allListings){ %>
     <div class="col-12 col-md-6 col-lg-4 mb-4">
@@ -10,18 +9,17 @@
         <img src="<%= listings.image.url %>" class="card-img-top" alt="listing_image" style="height: 20rem;">
         <div class="card-img-overlay"></div>
         <div class="card-body">
-            <p class="card-text">
-            <b><%= listings.title %></b>
-            </p>
+            <p class="card-text"><b><%= listings.title %></b></p>
             <p>
-            <%= listings.price.toLocaleString('en-IN') %> / night
-        </p>
+             ₹<%= listings.price != null ? listings.price.toLocaleString('en-IN') : 'Price not available' %> / night
+            </p>
         </div>
     </div>
     </a>
     </div>
-<% } %>
+    <% } %>
 </div>
+
 
 
 
