@@ -1,23 +1,25 @@
- body{
+ 
+body{
    font-family: "Plus Jakarta Sans", sans-serif !important;
- }
+}
 
 .navbar{
     height : 5rem;
     background-color: white;
+}
 
-}
 .fa-compass{
-color: #fe424d;
-font-size: 2rem;
+    color: #fe424d;
+    font-size: 2rem;
 }
+
 .nav-link{
     color: #222222 !important;
-
 }
+
 .f-info-links a{
-text-decoration: none;
-color: #222222;
+    text-decoration: none;
+    color: #222222;
 }
 
 .f-info-links, .f-info-socials, .f-info.brand{
@@ -33,7 +35,7 @@ color: #222222;
 }
 
 .f-info-links a:hover{
-text-decoration: underline;
+    text-decoration: underline;
 }
 
 .f-info {
@@ -68,14 +70,17 @@ text-decoration: underline;
 .card-text{
     font-weight: 400 !important;
 }
+
 .listing-link{
    text-decoration: none; 
 }
 
 /* Card Effect */
+
 .card-img-overlay{
     opacity: 0;
 }
+
 .card-img-overlay:hover{
     opacity: 0.2;
     background-color: white;
@@ -83,11 +88,35 @@ text-decoration: underline;
 
 .add-btn{
     background-color: #fe424d !important;
-    border: none !important ;
+    border: none !important;
     color: white !important;
 }
 
 /* Show Page */
+
 .show-img{
     height: 30vh;
+}
+
+
+/* Hamburger-Menu */
+
+@media (max-width: 767.98px) {
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1030;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        padding: 1rem;
+        z-index: 1031;
+        border-bottom: 1px solid #eee;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
 }
