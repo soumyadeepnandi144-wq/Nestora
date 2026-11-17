@@ -1,9 +1,8 @@
-
 <% layout("/layouts/boilerplate") %>
 
 <h3 class="mt-3">Edit Your Listing</h3>
 
-<form method="POST" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation" data-bs-validate>
+<form method="POST" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation">
 
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>
@@ -17,12 +16,13 @@
 
     <div class="mb-3">
         <label for="image" class="form-label">Image Link</label>
-        <input type="text" name="listing[image]" value="<%= listing.image %>" class="form-control" required>
+        <input type="text" name="listing[image][url]" value="<%= listing.image?.url || '' %>" class="form-control">
+        <input type="hidden" name="listing[image][filename]" value="<%= listing.image?.filename || '' %>">
     </div>
 
     <div class="mb-3">
         <label for="price" class="form-label">Price</label>
-        <input name="listing[price]" value="<%= listing.price %>" type="number" class="form-control" required>
+        <input name="listing[price]" value="<%= listing.price ?? '' %>" type="number" class="form-control" required>
     </div>
 
     <div class="mb-3">
@@ -38,6 +38,6 @@
     <button class="btn btn-dark add-btn">Edit</button>
     <br/><br/>
 </form>
-<script src="/js/script.js"></script>
+
 
 
